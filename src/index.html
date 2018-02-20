@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="LearnApp">
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS Learning Page - Karthik</title>
+  <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-cloak>
+
+  <div class="container" >
+
+    <div class="page-header">
+      <h3>Simple Exercises for AngularJS</h3>
+    </div>
+
+    <div ng-controller="LearnController" style="padding-left:20px; padding-right:20px">
+      <div class="row">
+        <input type="text" ng-model="content.itmIdx" ng-blur="getItem()">
+        <!-- <input type="button" value="Get Person" ng-click="getItem()"> -->
+      </div>
+      <div class="row">
+        Selected Person: {{ content.curItem }}
+      </div>
+
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="left">Left Operator:</label>
+          <input type="number" class="form-control" id="left" ng-model="content.leftop">
+        </div>
+      </form>
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="ryt">Right Operator:</label>
+          <input type="number" class="form-control" id="ryt" ng-model="content.rightop">
+        </div>
+      </form>
+      <form class="form-inline">
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" ng-click="addNumbers()">Add</button>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" ng-click="subNumbers()">Sub</button>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" ng-click="mulNumbers()">Mul</button>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" ng-click="divNumbers()">Div</button>
+        </div>
+
+      </form>
+      Addition Result: {{ content.result }}
+
+      <!-- <form class="form-group" name="userForm" novalidate>
+        <table class="user-form">
+          <tr>
+            <td>First Name</td>
+            <td><input type="text" ng-model=user></td>
+          </tr>
+        </table>
+
+      </form> -->
+    </div>
+
+  </div>
+
+  <!-- {{ getItem() }} -->
+
+  <!-- <div class="container">
+
+    <div ng-controller="LearnController" style="padding-left:20px; padding-right:20px">
+      <div class="navbar">
+        <div class="navbar-inner">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <input type="text" ng-model="itmIdx" ng-blur="getItem()">
+        <input type="button" value="Get Person" ng-click="getItem()">
+      </div>
+      <div class="row">
+        Selected Person: {{ curItem }}
+      </div>
+    </div>
+
+  </div> -->
+
+  <script type="text/javascript" src="../libs/angular/angular.js"></script>
+
+  <script type="text/javascript" src="../js/app.js"></script>
+  <script type="text/javascript" src="../js/LearnController.js"></script>
+</body>
+</html>
