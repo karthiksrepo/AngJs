@@ -9,8 +9,14 @@ LearnApp.controller("LearnController", ['$scope', function($scope) {
       leftop: null,
       rightop: null,
       result: null,
-      curItem: ''
+      oper: null,
+      curItem: '',
+      filler: ''
     };
+
+    var isFiller = function(){
+      $scope.content.filler = "is ";
+    }
 
     $scope.getItem = function() {
       $scope.content.curItem = items[($scope.content.itmIdx-1)];
@@ -19,6 +25,8 @@ LearnApp.controller("LearnController", ['$scope', function($scope) {
 
     $scope.addNumbers = function() {
       $scope.content.result = $scope.content.leftop + $scope.content.rightop;
+      $scope.content.oper = "plus";
+      isFiller();
       console.log($scope.content.leftop, $scope.content.rightop, $scope.content.result);
     };
 
@@ -36,6 +44,5 @@ LearnApp.controller("LearnController", ['$scope', function($scope) {
       $scope.content.result = $scope.content.leftop / $scope.content.rightop;
       console.log($scope.content.leftop, $scope.content.rightop, $scope.content.result);
     };
-
 
 }]);
